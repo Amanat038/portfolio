@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css" />
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      
+      <header>
+         <div class="hero-div"></div>
+         <div class="container">
+            <div class="profile">
+               <img src="assats/image.png" alt="Profile Picture" />
+            </div>
+            <div class="intro">
+               <h1>
+                  I'm <span class="highlight">Amanat Singh Bhadouriya</span>
+               </h1>
+               <h2>Web Designer & Developer</h2>
+               <p>
+                  Passionate about creating clean, user-friendly designs and
+                  smooth web experiences.
+               </p>
+               <a href="#projects" class="btn">More About Me</a>
+            </div>
+         </div>
+      </header>
+
+      <section id="projects">
+         <h2>My Projects</h2>
+         <div class="project-container">
+            <div class="project">
+               <img
+                  src="assats/traveCo.png"
+                  alt="Project 1"
+                  class="project-img"
+               />
+
+               <h3>Travel Application (MERN Stack)</h3>
+               <p>
+                  A full-stack travel booking platform built using the MERN
+                  stack. Users can explore destinations, book hotels, and manage
+                  their trips seamlessly with a secure authentication system.
+               </p>
+               <a href="https://traveco-ui.onrender.com/" class="btn"
+                  >View Project</a
+               >
+            </div>
+            <div class="project">
+               <img
+                  src="assats/Chat_image.png"
+                  alt="Project 1"
+                  class="project-img"
+               />
+
+               <h3>Chat Application (MERN Stack + Socket.io)</h3>
+               <p>
+                  A real-time chat application built with MERN stack and
+                  Socket.io for instant messaging. It includes user
+                  authentication, private/public chats, and a responsive UI.
+               </p>
+               <a
+                  href="https://chat-application-08060601.netlify.app/"
+                  class="btn"
+                  >View Project</a
+               >
+            </div>
+            <div class="project">
+               <img
+                  src="assats/twitter.png"
+                  alt="Project 1"
+                  class="project-img"
+               />
+
+               <h3>Twitter clone (MERN Stack)</h3>
+               <p>
+                  A feature-rich social media platform inspired by Twitter,
+                  developed using the MERN stack. Users can post tweets,
+                  like/unlike, comment, retweet, follow others, and manage their
+                  profiles.
+               </p>
+               <a href="https://twitter-clone-ui.onrender.com/" class="btn"
+                  >View Project</a
+               >
+            </div>
+         </div>
+      </section>
+
+      <section id="social">
+         <h2>Connect with Me</h2>
+         <div class="social-icons">
+            <a href="https://github.com/Amanat038" target="_blank">GitHub</a>
+            <a
+               href="https://www.linkedin.com/in/amanat-singh-bhadouriya-b070b5261/"
+               target="_blank"
+               >LinkedIn</a
+            >
+         </div>
+      </section>
+
+      <section id="contact">
+         <h2>Contact Me</h2>
+         <form action="" id="contact-form">
+            <input type="text" id="name" placeholder="Name" />
+            <span id="name-error" class="error-message"></span>
+            <input type="email" id="email" placeholder="Email" />
+            <span id="email-error" class="error-message"></span>
+            <textarea
+               id="message"
+               placeholder="Your Message"
+               required
+            ></textarea>
+            <span id="message-error" class="error-message"></span>
+            <button type="submit" class="btn">Send Message</button>
+         </form>
+      </section>
+
+      <footer>
+         <p>&copy; 2025 Amanat Singh Bhadouriya</p>
+         <div id="date-time"></div>
+      </footer>
+
+      <script src="script.js"></script>
+   </body>
+</html>
