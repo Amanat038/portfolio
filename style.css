@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
    font-family: sans-serif;
    margin: 0;
@@ -38,6 +43,7 @@ header {
    align-items: center;
    gap: 50px;
 }
+
 .project p {
    font-size: 15px;
    color: #c4c2c2;
@@ -66,9 +72,9 @@ header {
 }
 
 .intro p {
-   font-size: 1.1rem;
+   font-size: 1rem;
    max-width: 500px;
-   margin: 10px auto;
+   margin: 50px auto;
    line-height: 1.5;
 }
 
@@ -80,12 +86,19 @@ header {
    font-weight: bold;
    text-decoration: none;
    border-radius: 25px;
-   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+   transition:  background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .btn:hover {
    background: #ff9900;
    transform: scale(1.1);
+   box-shadow: 0px 0px 15px rgba(255, 153, 0, 0.8);
+}
+
+@keyframes bounce {
+   0% { transform: scale(1); }
+   50% { transform: scale(1.15); }
+   100% { transform: scale(1); }
 }
 
 /* Project Section */
@@ -106,8 +119,18 @@ header {
    padding: 20px;
    width: 300px;
    border-radius: 10px;
-   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+   transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.6s ease-in-out;
+   opacity: 0;
+   transform: translateX(-80px);
+}
+
+.project:nth-child(even) {
+  transform: translateX(80px);
+}
+
+.project.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .project:hover {
@@ -129,7 +152,7 @@ header {
 .social-icons a {
    font-size: 2rem;
    margin: 0 15px;
-   color: #ffcc00;
+   color: #1bae31;
    transition: transform 0.3s ease-in-out;
 }
 
@@ -139,7 +162,7 @@ header {
 }
 
 /* Contact Section */
-#contact {
+/* #contact {
    padding: 50px 10px;
    background: #252525;
 }
@@ -168,17 +191,65 @@ header {
 #contact-form textarea:focus {
    border-color: #ff9900;
    outline: none;
+} */
+
+
+
+#contact {
+   padding: 100px 10px;
+   background: #252525;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 300px;
+   overflow: hidden;
 }
 
-button.btn {
-   background-color: #ffcc00;
-   color: #121212;
+#contact-box {
+   position: relative;
+   width: 400px;
+   height: 200px;
+   text-align: center;
+   transition: transform 10s ease-in-out;
 }
 
-button.btn:hover {
-   background-color: #ff9900;
+#contact-text {
+   font-size: 2rem;
+   font-weight: bold;
+   color: #ffcc00;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transition: transform 1s ease-in-out, opacity 2s ease-in-out;
 }
 
+#contact-form {
+   position: absolute;
+   width: 100%;
+   opacity: 0;
+   
+   transform: rotateX(-90deg);
+   transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+#contact-form input,
+#contact-form textarea {
+   width: 90%;
+   padding: 12px;
+   border: 2px solid #ffcc00;
+   background: #181818;
+   color: #e0e0e0;
+   border-radius: 8px;
+   font-size: 1rem;
+   transition: border 0.3s ease-in-out;
+   outline: none;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+   border-color: #ff9900;
+}
 .error-message {
    color: red;
 }
@@ -191,7 +262,7 @@ footer {
    font-size: 0.9rem;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
    from {
       opacity: 0;
